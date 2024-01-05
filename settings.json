@@ -36,7 +36,7 @@
   "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Geist Mono Medium, 'Cascadia Code', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Geist Mono Semibold, 'Cascadia Code', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.inlineSuggest.enabled": true,
@@ -69,24 +69,58 @@
   "ocaml.useOcamlEnv": false,
   "typescript.updateImportsOnFileMove.enabled": "never",
   "window.commandCenter": false,
-  "window.titleBarStyle": "custom",
+  "window.titleBarStyle": "native",
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "moxer-icons",
   "workbench.layoutControl.enabled": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
-  "window.density.editorTabHeight": "compact",
-  "window.menuBarVisibility": "toggle", // Toggable with Alt
+  "window.density.editorTabHeight": "compact", // Toggable with Alt
 
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.reloadWindow"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "editor.lineNumbers": "relative",
   "editor.tokenColorCustomizations": {
     "comments": "#696969"
-    // "keywords": "#9E78F7",
-    // "strings": "#61FBC7",
-    // "numbers": "#f7d978",
-    // "functions": "#78f798",
-    // "variables": "#bebebe",
-    // "types": "#78c9f7",
+    // "keywords": "#F9F871",
+    // "strings": "#66BAA8",
+    // "numbers": "#FF9E78",
+    // "functions": "#b29aea",
+    // "variables": "#D0BCF2",
+    // "types": "#F9EAFF"
   },
 
   "workbench.colorCustomizations": {
@@ -112,7 +146,7 @@
     // Editor
     "editor.background": "#15141A",
     "editor.lineHighlightBackground": "#242424",
-    "editor.selectionBackground": "#242424",
+    "editor.selectionBackground": "#3b3b3b",
     "editor.selectionHighlightBackground": "#242424",
     "editorCursor.foreground": "#ffffff",
     "editorGroup.border": "#131017",
@@ -278,6 +312,8 @@
     "gitDecoration.submoduleResourceForeground": "#78c9f7",
     "gitDecoration.stageDeletedResourceForeground": "#f77878",
     "gitDecoration.stageModifiedResourceForeground": "#f7d978"
-  }
+  },
+  "window.zoomLevel": 1,
+  "window.menuBarVisibility": "toggle"
   // }
 }
